@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #====================================================
 #          FILE: sdat2img.py
@@ -7,17 +7,20 @@
 #====================================================
 
 from __future__ import print_function
+from __future__ import absolute_import
 import sys, os, errno
+from six.moves import range
+from six.moves import input
 
 def main(TRANSFER_LIST_FILE, NEW_DATA_FILE, OUTPUT_IMAGE_FILE):
     __version__ = '1.2'
 
     if sys.hexversion < 0x02070000:
-        print >> sys.stderr, "Python 2.7 or newer is required."
+        print >> sys.stderr, "Python 3.x or newer is required."
         try:
             input = raw_input
         except NameError: pass
-        input('Press ENTER to exit...')
+        eval(input('Press ENTER to exit...'))
         sys.exit(1)
     else:
         print('sdat2img binary - version: {}\n'.format(__version__))
@@ -132,7 +135,7 @@ if __name__ == '__main__':
         try:
             input = raw_input
         except NameError: pass
-        input('Press ENTER to exit...')
+        eval(input('Press ENTER to exit...'))
         sys.exit()
 
     try:
